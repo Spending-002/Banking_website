@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Acccount</title>
+    <link rel="stylesheet" href="Bank info.css">
+  </head>
+  <body>
+    
+    
+<h1 style="color: navy; margin: none;">Payrr</h1>
+    
+    <div class="details-container">
+    <div class="detail-nav">
+    <h5>Available Balance</h5>
+    <img src="icon/balance-open.png">
+</div>
+        
+  <div class="balance">&#8358 100,000.00</div>
+  <button class="add-money">+Add Money</button>
+<h5 class="transaction">Transaction History</h5>
+
+<img src="icon/diamond-one.png" class="rank">
+
+</div>
+
+<div class="transaction-history"></div>
+  
+    
+  <div id="addMoney-modal">
+<div class="modal-header">
+<img src="icon/backarrow.png" style="width: 20px; height: 20px;">
+<h3 style="padding:10px;">Add Money</h3>
+</div>
+
+<div class="number-nav">
+<h5 style="margin: 0;">Your account number</h5>
+<div id="account-number" style="
+font-size: 35px; padding-top: 10px;">9075484829</div>
+</div>
+    
+<button id="copy" onmousedown="copy();"
+style="margin:10px; padding:8px 15px;">Copy</button>
+</div>  
+
+<div class="nav-container">
+  <div class="navBox">
+  <div class="navBtn">
+  <div class="navIcon" style="background-image: url('icon/payrr.png');"></div>
+  </div>
+  <span>To payrr</span>
+  </div>
+  
+  <div class="navBox">
+  <div class="navBtn">
+  <div class="navIcon" style="background-image: url('icon/bank.png');"></div>
+  </div>
+  <span>To bank</span>
+  </div>
+
+  
+  <div class="navBox">
+  <div class="navBtn">
+  <div class="navIcon" style="background-image: url('icon/withdrawal.png');"></div>
+  </div>
+  <span>Withdraw</span>
+  </div>
+</div>
+  
+<div class="nav-container">
+    <div class="navBox">
+  <div class="navBtn">
+   <div class="navIcon" style="background-image: url('icon/crypto.png');"></div>
+  </div>
+  <span>Crypto</span>
+  </div>
+  
+    <div class="navBox">
+  <div class="navBtn">
+  <div class="navIcon" style="background-image: url('icon/coin.png');"></div>
+  </div>
+  <span>Coin</span>
+  </div>
+  
+    <div class="navBox">
+  <div class="navBtn">
+   <div class="navIcon" style="background-image: url('icon/daily check-in.png');"></div>
+  </div>
+  <span>Check-in</span>
+  </div>
+</div>
+
+  <div class="internet-container">
+      
+   <div class="navBox">
+  <div class="navBtn">
+   <div class="navIcon" style="background-image: url('icon/airtime.png');"></div>
+  </div>
+  <span>Airtime</span>
+  </div>
+    
+    
+  <div class="navBox">
+  <div class="navBtn">
+   <div class="navIcon" style="background-image: url('icon/data.png');"></div>
+  </div>
+  <span>Data</span>
+  </div>
+  
+    
+    <div class="navBox">
+  <div class="navBtn">
+   <div class="navIcon" style="background-image: url('icon/electricity.png');"></div>
+  </div>
+  <span>Electricity</span>
+  </div>
+  
+    
+    <div class="navBox">
+  <div class="navBtn">
+   <div class="navIcon" style="background-image: url('icon/savings.png');"></div>
+  </div>
+  <span>Savings</span>
+  </div>
+  
+  <div class="navBox">
+  <div class="navBtn">
+   <div class="navIcon" style="background-image: url('icon/investment.png');"></div>
+  </div>
+  <span>Investment</span>
+  </div>
+  
+    <div class="navBox">
+  <div class="navBtn">
+   <div class="navIcon" style="background-image: url('icon/contribution.png');"></div>
+  </div>
+  <span>Contribution</span>
+  </div>
+  
+  
+      <div class="navBox">
+  <div class="navBtn">
+   <div class="navIcon" style="background-image: url('icon/refer.png');"></div>
+  </div>
+  <span>Refer and earn</span>
+  </div>
+  
+      <div class="navBox">
+  <div class="navBtn">
+   <div class="navIcon" style="background-image: url('icon/virtual-card.png');"></div>
+  </div>
+  <span>Virtual card</span>
+  </div>
+  </div>
+  
+  <footer>
+  <div class="footer-nav">
+<img src="icon/home-active.png" style="width: 25px; height: 25px;">
+    <span id="home-text" style="color: navy; font-weight: bold;">Home</span>
+  </div>
+  
+    <div class="footer-nav">
+<img src="icon/message.png" style="width: 25px; height: 25px;">
+    <span>Message</span>
+  </div>
+  
+    <div class="footer-nav">
+<img src="icon/badge.png" style="width: 25px; height: 25px;">
+    <span>Badge</span>
+  </div>
+  
+    <div class="footer-nav">
+<img src="icon/profile.png" style="width: 25px; height: 25px;">
+    <span>Profile</span>
+  </div>
+  </footer>
+
+    
+    <script src="Bank info.js" defer></script>
+  
+  </body>
+</html>
