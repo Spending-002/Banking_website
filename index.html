@@ -5,10 +5,17 @@
     <title>Bank Acccount</title>
     <link rel="stylesheet" href="Bank info.css">
   </head>
-  <body id="index-page">
+  <body>
     
+  <div id="app">
     
-<h1 style="color: navy; margin: none;">Payrr</h1>
+  <!--index page-->
+  <div class="screen" id="index">
+    
+  <!--Screen Wrapper-->
+<div class="screen-wrapper">
+  
+<h1 style="color: navy; margin: 0;">Payrr</h1>
     
     <div class="details-container">
     <div class="detail-nav">
@@ -16,30 +23,14 @@
     <img src="icon/balance-open.png">
 </div>
         
-  <div class="balance">&#8358 00.00</div>
+  <div class="balance">&#8358 100,000.00</div>
   <button class="add-money">+Add Money</button>
-<h5 onclick="transaction-his" class="transaction">Transaction History</h5>
+<h5 class="transaction">Transaction History</h5>
 
 <img src="icon/diamond-one.png" class="rank">
-
 </div>
   
-    
-  <div id="addMoney-modal">
-<div class="modal-header">
-<img src="icon/backarrow.png" style="width: 20px; height: 20px;">
-<h3 style="padding:10px;">Add Money</h3>
-</div>
 
-<div class="number-nav">
-<h5 style="margin: 0;">Your account number</h5>
-<div id="account-number" style="
-font-size: 35px; padding-top: 10px;">9075484829</div>
-</div>
-    
-<button id="copy" onmousedown="copy();"
-style="margin:10px; padding:8px 15px;">Copy</button>
-</div>  
 
 <div class="nav-container">
   <div class="navBox">
@@ -172,9 +163,30 @@ style="margin:10px; padding:8px 15px;">Copy</button>
     <span>Profile</span>
   </div>
   </footer>
-
-    
-    <script src="Bank info.js" defer></script>
+  </div>
+  </div>
+  <!--End here-->
   
+  
+  <!--Transfer History-->
+<div class="history">
+  
+      <!--Screen Wrappper-->
+  <div class="screen-wrapper">
+  <div class="history-header">
+  <img onclick="goBack()" src="icon/backarrow.png" style="width: 20px; height: 20px;">
+  <h3 style="margin: 0;">Transfer History</h3>
+</div>
+
+<div id="content" class="history-content"></div>
+  
+  </div>
+    
+
+</div>
+</div>
+<script src="Bank info.js" defer></script>
+
+
   </body>
 </html>
