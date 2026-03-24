@@ -1,14 +1,36 @@
-body{
-        font-family: arial, sans-serif;
-        padding: 0px 10px;
-        box-sizing: border-box;
-        max-width: 1000px;
-        margin: auto;
-      }
-      
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  display: flex;
+  justify-content: center; /* center the app */
+}
 
+#app {
+  width: 100%;
+  max-width: 400px; /* keeps your app small */
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
 
-      
+.screen-wrapper {
+  padding: 0 10px; /* the "side space" you wanted */
+  position: relative;
+}
+
+.screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* fill wrapper */
+  height: 100%;
+}
+
+#index{
+  transition: 0.2s ease;
+}
+
+  
       .name{
         font-size: 20px;
         color: black;
@@ -59,18 +81,10 @@ body{
         position: absolute;
         bottom: 5px;
         right: 3px;
+        z-index: 2;
       }
       
-      .transaction-history{
-        position: relative;
-        width: 100%;
-        height: 0px;
-        border-radius: 9px;
-        border: 1px solid gainsboro;
-        background: whitesmoke;
-        box-shadow: 1px 2px 5px 0px gainsboro;
-        transition: 0.2s all;
-      }
+      
       
     .add-money{
       position: absolute;
@@ -84,14 +98,13 @@ body{
        border-radius: 9px;
     }
     
-   #addMoney-modal{
-     display: none;
-     position: fixed;
-     top: 0;
-     left: 0;
+   .add-money-modal{
      width: 100%;
      height: 100vh;
-     background: white;
+     background: red;
+     opacity: 0;
+     pointer-events: none;
+     transition: 0.4s ease;
    }
    
   .number-nav{
@@ -155,7 +168,7 @@ body{
     gap: 50px;
     width: 100%;
     height: auto;
-    margin: 20px auto;
+    margin: 40px auto;
     border: 1px solid grey;
     border-radius: 12px;
     box-shadow: 1px 1px 6px grey;
@@ -164,9 +177,6 @@ body{
     transition: transform 1s ease;
   }
   
-  .nav-container:hover{
-    transform: scale(1.1);
-  }
   
   .navBox{
     display: flex;
@@ -229,4 +239,37 @@ body{
   
   footer span{
     font-size: 13px;
+  }
+  /*Transaction History*/
+  
+  .history{
+    width: 100%;
+    height: 100vh;
+    background: white;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.2s ease;
+    padding-top: 80px;
+  }
+  
+  .history-header{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-bottom: 1px solid gainsboro;
+    text-align: center;
+    padding: 5px;
+  }
+  
+  .history-content{
+    text-align: center;
+    font-size: bold;
+    font-size: 18px;
+    font-family: Arial, Segoe UI, Georgia;
+    color: grey;
   }
