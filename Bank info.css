@@ -8,7 +8,7 @@ body {
 #app {
   width: 100%;
   max-width: 400px; /* keeps your app small */
-  height: 90vh;
+  heiht: 90vh;
   position: relative;
   overflow: hidden;
   margin-top: 50px;
