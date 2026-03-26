@@ -19,9 +19,11 @@ body{
   }
   .virtual-card{
     position: relative;
+    color: white;
     width: 300px;
     height: 180px;
     border-radius: 16px;
+    background-image: url('image/card-1.jpeg');cover center no-repeat;
   }
   h3{
     position: absolute;
@@ -29,7 +31,6 @@ body{
     left: 10px;
     font-size: 25px;
     margin: 0;
-    color: white;
   }
   h4{
     position: absolute;
@@ -38,7 +39,6 @@ body{
     font-size: 15px;
     font-weight: normal;
     margin: 0;
-    color: white;
   }
   h5{
     position: absolute;
@@ -47,7 +47,6 @@ body{
     font-size: 15px;
     font-weight: normal;
     margin: 0;
-    color: white;
     font-weight: bold;
   }
   span{
@@ -64,7 +63,6 @@ body{
     right: 20px;
     font-style: italic;
     font-size: 180px;
-    color: white;
     transform: rotate(10deg);
   }
   .card-nav{
@@ -130,20 +128,22 @@ body{
     margin: 0;
     font-size: 12px;
   }
-  .color-container{
+  .cards-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
-    border: 1px solid  red;
-    height: 100px;
+    border: 1px solid  whitesmoke;
+    height: 0px;
+    background: whitesmoke;
+    transition: 0.1s ease;
   }
-  .color{
+  .cards{
+    display: none;
     width: 50px;
     height: 50px;
     border-radius: 9px;
-    border: 2px solid red;
-  }
-  #color-1{
-    background: linear-gradient(to top right,navy,green);
   }
