@@ -1,144 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>Virtual Card</title>
-    <style>
-  body{
-    font-family: Arial, Sans-Serif;
-    margin: 0;
-  }
-  .header{
-    display: flex;
-    align-items: center;
-    justify-items: start;
-    gap: 10px;
-    height: 20px;
-    padding: 10px;
-    border-bottom: 1px solid gainsboro;
-  }
-  .card-container{
-    display: flex;
-    align-items: center;
-    justify-self: center;
-    padding-top: 30px;
-  }
-  .virtual-card{
-    position: relative;
-    width: 300px;
-    height: 180px;
-    border: 2px solid navy;
-    border-radius: 16px;
-    background: navy;
-  }
-  h3{
-    position: absolute;
-    top: 5px;
-    left: 10px;
-    font-size: 25px;
-    margin: 0;
-    color: white;
-  }
-  h4{
-    position: absolute;
-    bottom: 5px;
-    left: 10px;
-    font-size: 15px;
-    font-weight: normal;
-    margin: 0;
-    color: white;
-  }
-  h5{
-    position: absolute;
-    bottom: 5px;
-    right: 10px;
-    font-size: 15px;
-    font-weight: normal;
-    margin: 0;
-    color: white;
-    font-weight: bold;
-  }
-  span{
-    border-radius: 20px;
-    padding: 1px 3px;
-    border: 1px solid green;
-    background: green;
-    font-weight: bold;
-    margin-right: -5px;
-  }
-  .card-design{
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    font-display: italia;
-    font-size: 180px;
-    color: white;
-    transform: rotate(10deg);
-  }
-  .card-nav{
-    position: absolute;
-    top: -3px;
-    left: 120px;
-    width: 3px;
-    height: 103%;
-    border: 1px solid white;
-    transform: rotate(5deg);
-    background: white;
-  }
-  .create-card{
-    position: absolute;
-    top: 45%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    font-size: 18px;
-    font-weight: normal;
-    color: white;
-    background: hsl(200,100%,30%);
-    border: none;
-    padding: 5px 20px;
-    border-radius: 9px;
-  }
-  .card-content{
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    align-items: center;
-    position: fixed;
-    top: 70%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    width: 90%;
-    height: 100px;
-    border: 2px solid whitesmoke;
-    background: whitesmoke;
-    box-sizing: border-box;
-    padding: 5px;
-    border-radius: 8px;
-  }
-  .content{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    gap: 2px;
-  }
-  .content-nav{
-    width: 30px;
-    height: 30px;
-    border: 1px solid navy;
-    border-radius: 12px;
-    background: navy;
-    padding: 5px;
-  }
-  .icon{
-   width: 100%;
-   height: 100%;
-   background-position: center;
-   background-size: cover; 
-  }
-  p{
-    margin: 0;
-    font-size: 12px;
-  }
-    </style>
+    <link rel="stylesheet" href="virtual-card.css">
   </head>
   <body>
     <div class="header">
@@ -153,6 +18,7 @@
         <h5><span>V</span> erve</h5>
         <div class="card-design">P</div>
         <div class="card-nav"></div>
+        <div style="background-image: url('image/card-1.jpeg'); background-size:cover; width: 100%; height: 100%; border-radius: 12px;"></div>
         </div>
     </div>
     
@@ -179,6 +45,11 @@
          </div>
         <p>Card Types</p>
         </div>
+    </div>
+    
+    <div class="color-container">
+    <div class="color" id="color-1"></div>
+    
     </div>
   </body>
 </html>
