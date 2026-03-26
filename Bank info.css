@@ -3,8 +3,8 @@ body {
   margin: 0;
   display: flex;
   justify-content: center;
-  height: 100vh;  
-  overflow: hidden;    
+  height: 100vh;        /* ✅ add this */
+  overflow: hidden;     /* ✅ stop scrolling */
 }
 
 #app {
@@ -179,7 +179,7 @@ body {
     padding: 20px 15px 10px;
     box-sizing: border-box;
     transition: transform 1s ease;
-    margin-top: 50px;
+    margin-top: 40px;
   }
   
   .nav-container{
@@ -194,7 +194,7 @@ body {
     padding: 10px 15px 5px;
     box-sizing: border-box;
     transition: transform 1s ease;
-    margin-top: 50px;
+    margin-top: 30px;
   }
   
   
