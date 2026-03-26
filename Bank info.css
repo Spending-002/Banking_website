@@ -13,7 +13,7 @@ body {
   height: 100vh;
   position: relative;
   overflow: hidden;
-  margin-top: 60px;
+  padding-top: 160px;
 }
 
 .screen-wrapper {
