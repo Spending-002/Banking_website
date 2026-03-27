@@ -175,6 +175,7 @@ body{
   background: whitesmoke;
   overflow: auto;
   pading-top: 200px;
+  transition: 0.2s ease;
 }
 .type{
   width: 300px;
