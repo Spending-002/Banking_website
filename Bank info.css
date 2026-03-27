@@ -179,7 +179,7 @@ body {
     padding: 20px 15px 10px;
     box-sizing: border-box;
     transition: transform 1s ease;
-    margin-top: 40px;
+    margin-top: 50px;
   }
   
   .nav-container{
@@ -194,7 +194,7 @@ body {
     padding: 10px 15px 5px;
     box-sizing: border-box;
     transition: transform 1s ease;
-    margin-top: 30px;
+    margin-top: 50px;
   }
   
   
@@ -222,7 +222,7 @@ body {
   }
   
   span{
-    font-size: 12px;
+    font-size: 11px;
     font-family: Arial, Segoe UI;
   }
   
