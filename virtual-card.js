@@ -70,3 +70,7 @@ let isOpen = false;
   cardTypeIcon.addEventListener('click', ()=>{
    cardType.style.height = "100vh";
   });
+  
+  function hello(){
+  cardType.style.height = "0vh";
+  }
