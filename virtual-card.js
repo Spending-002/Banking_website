@@ -1,3 +1,5 @@
+
+/*Customize Card */
 let isOpen = false;
     
     const customize = document.getElementById('customize-card');
@@ -58,4 +60,13 @@ let isOpen = false;
     virtualCard.style.backgroundImage = "url('image/card-5.jpeg')";
     virtualCard.style.color = "green";
     span.style.background = "gainsboro";
+  });
+  
+  
+  /*Card Type*/
+  const cardTypeIcon = document.getElementById('card-type-icon');
+  const cardType = document.querySelector('.card-type');
+  
+  cardTypeIcon.addEventListener('click', ()=>{
+   cardType.style.height = "100vh";
   });
