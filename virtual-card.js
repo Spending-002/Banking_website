@@ -3,8 +3,7 @@ let isOpen = false;
     const customize = document.getElementById('customize-card');
     const container = document.querySelector('.cards-container');
     const cards = document.querySelectorAll('.cards');
-    
-    
+
     customize.addEventListener('click',(e)=>{
     e.stopPropagation();
     
@@ -34,21 +33,25 @@ let isOpen = false;
   card1.addEventListener('click', ()=>{
     virtualCard.style.backgroundImage = "url('image/card-1.jpeg')";
     virtualCard.style.color = "white";
+    span.style.background = "green";
   });
   
   card2.addEventListener('click', ()=>{
     virtualCard.style.backgroundImage = "url('image/card-2.jpeg')";
     virtualCard.style.color = "white";
+    span.style.background = "green";
   });
   
   card3.addEventListener('click', ()=>{
     virtualCard.style.backgroundImage = "url('image/card-3.jpeg')";
     virtualCard.style.color = "white";
+    span.style.background = "green";
   });
   
   card4.addEventListener('click', ()=>{
     virtualCard.style.backgroundImage = "url('image/card-4.jpeg')";
     virtualCard.style.color = "white";
+    span.style.background = "green";
   });
   
   card5.addEventListener('click', ()=>{
