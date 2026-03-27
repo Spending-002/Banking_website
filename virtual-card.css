@@ -1,6 +1,7 @@
 body{
     font-family: Arial, Sans-Serif;
     margin: 0;
+    
   }
   .header{
     display: flex;
@@ -159,4 +160,31 @@ body{
   right: -15px;
   width: 25px;
   height: 25px;
+}
+.card-type{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 40px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0vh;
+  background: whitesmoke;
+  overflow: auto;
+  pading-top: 200px;
+}
+.type{
+  width: 300px;
+  height: 180px;
+  border-radius: 16px;
+}
+.card-type-nav{
+   position: relative;
+    color: white;
+    width: 300px;
+    height: 180px;
+    border-radius: 16px;
 }
