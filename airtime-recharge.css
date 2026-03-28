@@ -1,0 +1,153 @@
+body{
+    margin: 0;
+    font-family: Arial, Sans-Serif;
+  }
+  .header{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    gap: 8px;
+    border-bottom: 1px solid whitesmoke;
+    box-sizing: border-box;
+    background: navy;
+    color: white;
+  }
+  h5,h4{
+    margin: 0;
+  }
+  .airtime-container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 10px;
+    gap: 10px;
+    box-sizing: border-box;
+  }
+  #airtime-body{
+    width: 70%;
+    height: 50px;
+    border: 1px solid navy;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: navy;
+    color: white;
+  }
+  #airtime-number{
+    width: 80%;
+    height: 50px;
+    outline: none;
+    box-sizing: border-box;
+    border: none;
+    font-size: 24px;
+    background: navy;
+    color: white;
+    padding-left: 10px;
+  }
+  .h4{
+    font-size: 16px;
+    font-weight: normal;
+    border-right: 1px solid gainsboro;
+  }
+  #airtime-type{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    background-image: url('image/mtn.png');
+    background-size: cover;
+    background-position: center 
+    background-repeat: no-repeat;
+ }
+ .type{
+   position: absolute;
+   top: ;
+ }
+  #select-contact{
+    width: 20px;
+    height: 20px;
+    border: 2px solid navy;
+    border-radius: 10px;
+    background: navy;
+    padding: 5px;
+  }
+  .contact-icon{
+    width: 100%;
+    height: 100%;
+    background-image: url('icon/contact.png');
+    background-size: cover;
+    background-position: center 
+    background-repeat: no-repeat;
+  }
+  .top-up{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    width: 95%;
+    height: 200px;
+    border: 1px solid gainsboro;
+    gap: 40px;
+    padding: 30px 10px;
+    box-sizing: border-box;
+    margin: 60px auto;
+    border-radius: 20px;
+    background: whitesmoke;
+  }
+  .top-up-nav{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 50px;
+    border: 1px solid navy;
+    border-radius: 12px;
+    background: navy;
+    color: white;
+    font-weight: bold;
+  }
+  span{
+    font-size: 12px;
+  }
+  .cash-back{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 12px;
+    border: 1px solid rgb(0,0,228,0.5);;
+    background: rgb(0,0,228,0.5);
+    border-radius: 0 0 9px 9px;
+    box-sizing: border-box;
+    font-size: 10px;
+    text-align: center;
+    padding-bottom: 2px;
+  }
+  .price-container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 90px 5px 0;
+    box-sizing: border-box;
+  }
+  #price{
+    border: none;
+    border-bottom: 2px solid whitesmoke;
+    outline: none;
+    width: 180px;
+    font-size: 20px;
+    margin-left: 30px;
+  }
+  button{
+    width: 100px;
+    padding: 5px;
+    border: 1px solid navy;
+    border-radius: 9px;
+    background: navy;
+    font-size: 16px;
+    color: white;
+  }
