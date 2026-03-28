@@ -6,11 +6,15 @@ body{
   .header{
     display: flex;
     align-items: center;
-    justify-content: start;
+    justify-content: space-between;
     gap: 10px;
     height: 20px;
-    padding: 10px;
-    border-bottom: 1px solid gainsboro;
+    padding: 5px;
+    border-bottom: 1px solid navy;
+    background: navy;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
   }
   .card-container{
     position: relative;
