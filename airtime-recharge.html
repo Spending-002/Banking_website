@@ -16,15 +16,21 @@
     
     
     <div class="airtime-container">
-      <div id="airtime-type">
-        <div class="type"></div>
+     <div class="dropdown" data-dropdown>
+    <div id="airtime-type" class="dropdown-toggle">
       
+       <div class="dropdown-menu">
+       <img id="airtel" src="image/airtel.png" class="dropdown-item">
+       <img id="glo" src="image/glo.jpeg" class="dropdown-item">
+       <img id="mtn" src="image/mtn.png" class="dropdown-item">
+     </div>
+</div>
       </div>
       
       <div id="airtime-body">
         <h4 class="h4"><span style="padding-right: 5px;">+234</span>
         </h4>
-       <input type="tel" id="airtime-number">
+       <input type="tel" id="airtime-number" maxlength="11">
       </div>
       
     <div id="select-contact">
@@ -32,9 +38,15 @@
       </div>
   </div>
   
+
   
    <div class="price-container">
-     <input type="tel" id="price" placeholder="&#8358 50-200,000">
+     <div style="display: flex; align-items: center; padding-left: 30px;">
+     <div style="font-size: 20px; color: black;">
+       &#8358</div>
+     <input type="tel" id="price" maxlength="10" placeholder="50-200,000">
+    </div>
+    
      <button>Pay</button>
     </div>
     
@@ -63,7 +75,8 @@
      <div class="top-up-nav"><span>&#8358</span>2,000
     <div class="cash-back"><span>&#8358</span>20 Cashback</div>
      </div>
+</div>
 
-    </div>
+<script src="airtime-recharge.js" defer></script>
   </body>
 </html>
