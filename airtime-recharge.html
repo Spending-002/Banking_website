@@ -17,15 +17,14 @@
     
     <div class="airtime-container">
      <div class="dropdown" data-dropdown>
-    <div id="airtime-type" class="dropdown-toggle">
+    <div id="airtime-type" class="dropdown-toggle"></div>
       
-       <div class="dropdown-menu">
-       <img id="airtel" src="image/airtel.png" class="dropdown-item">
-       <img id="glo" src="image/glo.jpeg" class="dropdown-item">
-       <img id="mtn" src="image/mtn.png" class="dropdown-item">
+    <div class="dropdown-menu">
+       <img  src="image/airtel.png" class="dropdown-item">
+       <img src="image/glo.jpeg" class="dropdown-item">
+       <img src="image/mtn.png" class="dropdown-item">
      </div>
 </div>
-      </div>
       
       <div id="airtime-body">
         <h4 class="h4"><span style="padding-right: 5px;">+234</span>
@@ -44,35 +43,34 @@
      <div style="display: flex; align-items: center; padding-left: 30px;">
      <div style="font-size: 20px; color: black;">
        &#8358</div>
-     <input type="tel" id="price" maxlength="10" placeholder="50-200,000">
+     <input type="tel" id="price" maxlength="10" placeholder="50-500,000">
     </div>
-    
-     <button>Pay</button>
+     <button id="pay-button">Pay</button>
     </div>
-    
+  <p id="error" class="error"></p>
     
     <div class="top-up">
-     <div class="top-up-nav"><span>&#8358</span>50
+     <div class="top-up-nav" data-value="50"><span>&#8358</span>50
      <div class="cash-back"><span>&#8358</span> 0.5 Cashback</div>
      </div>
      
-     <div class="top-up-nav"><span>&#8358</span>100
+     <div class="top-up-nav" data-value="100"><span>&#8358</span>100
       <div class="cash-back"><span>&#8358</span>1 Cashback</div>
      </div>
      
-     <div class="top-up-nav"><span>&#8358</span>200
+     <div class="top-up-nav" data-value="200"><span>&#8358</span>200
      <div class="cash-back"><span>&#8358</span>2 Cashback</div>
      </div>
      
-     <div class="top-up-nav"><span>&#8358</span>500
+     <div class="top-up-nav" data-value="500"><span>&#8358</span>500
      <div class="cash-back"><span>&#8358</span>5 Cashback</div>
      </div>
      
-     <div class="top-up-nav"><span>&#8358</span>1,000
+     <div class="top-up-nav" data-value="1000"><span>&#8358</span>1,000
      <div class="cash-back"><span>&#8358</span>10 Cashback</div>
      </div>
      
-     <div class="top-up-nav"><span>&#8358</span>2,000
+     <div class="top-up-nav" data-value="2000"><span>&#8358</span>2,000
     <div class="cash-back"><span>&#8358</span>20 Cashback</div>
      </div>
 </div>
