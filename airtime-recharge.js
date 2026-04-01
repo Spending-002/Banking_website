@@ -61,7 +61,7 @@ function validate(value) {
   let num = Number(value);
 
   if (num < 50) {
-    error.textContent = "Minimum amount is ₦50";
+    error.textContent = "Minimum amount is  ₦50";
     payBtn.disabled = true;
   } else if (num > 200000) {
     error.textContent = "Maximum amount is ₦500,000";
