@@ -74,3 +74,28 @@ let isOpen = false;
   function hello(){
   cardType.style.height = "0vh";
   }
+  
+  let opened = false;
+
+const notificationBtn = document.getElementById('notification-btn');
+const notificationContainer = document.getElementById('notification-container');
+
+
+notificationBtn.addEventListener('click', (e) =>{
+  e.stopPropagation();
+  
+  if(!opened){
+  notificationContainer.style.opacity = "1";
+  notificationContainer.pointerEvents = "auto";
+  notificationContainer.style.height = "100vh";
+  notificationContainer.textContent = "No history";
+  notificationContainer.style.paddingTop = '50px';
+  notificationContainer.style.textAlign = 'center';
+  notificationContainer.style.pointerEvents = 'auto';
+  }else{
+  notificationContainer.style.opacity = "0";
+  notificationContainer.pointerEvents = "none";
+  notificationContainer.style.height = "0";
+  }
+  opened = !opened;
+});
