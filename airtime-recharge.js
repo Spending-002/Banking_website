@@ -95,3 +95,28 @@ function render() {
     );
   });
 }
+
+let opened = false;
+
+const historyBtn = document.getElementById('history-btn');
+const historyContainer = document.getElementById('history-container');
+
+
+historyBtn.addEventListener('click', (e) =>{
+  e.stopPropagation();
+  
+  if(!opened){
+  historyContainer.style.opacity = "1";
+  historyContainer.pointerEvents = "auto";
+  historyContainer.style.height = "100vh";
+  historyContainer.textContent = "No history";
+  historyContainer.style.paddingTop = '50px';
+  historyContainer.style.textAlign = 'center';
+  historyContainer.style.pointerEvents = 'auto';
+  }else{
+  historyContainer.style.opacity = "0";
+  historyContainer.pointerEvents = "none";
+  historyContainer.style.height = "0";
+  }
+  opened = !opened;
+});
