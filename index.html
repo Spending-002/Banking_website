@@ -2,201 +2,252 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bank Acccount</title>
-    <link rel="stylesheet" href="Bank info.css">
+    <title>Index Page</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+  body{
+    margin: 0;
+    font-family: Arial, Comic Sans MS;
+ }
+   #signLogin-container{
+     width: 100%;
+     height: 100dvh;
+     perspective: 1000px;
+     overflow: hidden;
+  }
+  .cards {
+  width: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+.cards.flip {
+  transform: rotateY(180deg);
+}
+
+  #signLogin-body, #signUp-body{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    border: 1px solid white;
+    box-sizing: border-box;
+    background: whitesmoke;
+    box-shadow: 0 0 8px lightblue;
+    backface-visibility: hidden;
+  }
+   #signUp-body{
+    transform: rotateY(180deg);
+  }
+  .logo{
+    text-align: center;
+    font-size: 35px;
+    font-family: Arial, Sans-Serif;
+    font-weight: bold;
+    color: navy;
+    transform: rotate(-10deg);
+    margin: 30px 0px 50px;
+  }
+  .input-wrapper{
+    position: relative;
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+.input-wrapper input{
+    width: 100%;
+    height: 30px;
+    outline: none;
+    padding: 3px 10px;
+    font-size: 20px;
+    font-family: Arial,Sans-Serif;
+    background: navy;
+    color: white;
+    border-radius: 8px;
+    border: none;
+  }
+
+.input-wrapper label {
+  position: absolute;
+  left: 0px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  pointer-events: none;
+  transition: 0.3s ease;
+  background: navy;
+  padding: 0 4px;
+}
+/* when input is focused OR has value */
+.input-wrapper input:focus + label,
+.input-wrapper input:valid + label {
+  top: -12px;
+  left: 0px;
+  font-size: 16px;
+  color: navy;
+  background: whitesmoke;
+  font-weight: bold;
+}
+  label{
+    font-size: 16px;
+    margin-right: auto;
+    margin-bottom: 5px;
+    padding-left: 10x;
+    color: white;
+  }
+  button{
+    padding:  5px 40px;
+    border-radius: 9px;
+    border: 1px solid navy;
+    font-size: 18px;
+    color: white;
+    background: navy;
+    box-shadow: 0 0 4px blue;
+    display: flex;
+    justify-self: center;
+    margin-top: 50px;
+  }
+   .error-alert{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(180deg);
+    transition: transform 0.4s;
+    padding: 5px;
+    color:red ;
+    
+   }   
+    </style>
   </head>
   <body>
+   
+<div id="signLogin-container">
+  
+  <div class="cards" id="cards">
+  <div id="signLogin-body">
     
-  <div id="app">
+    <h3 class="logo">Payrr</h3>
     
-  <!--index page-->
-  <div class="screen" id="index">
-    
-  <!--Screen Wrapper-->
-<div class="screen-wrapper">
-  <div class="top-bar">
-<div>Payrr</div>
-
-<div class="profile" style="background-image: url('image/Bolu1.jpg"></div>
+    <div style="width: 100%; display: flex; align-items: center; flex-direction: column; gap: 30px;">
+   <div class="input-wrapper">
+    <input type="email" id="loginEmail" placeholder=" "  required>
+    <label for="loginEmail">Email</label>
   </div>
+       
+   <div class="input-wrapper">
+    <input type="password" id="loginPassword" placeholder=" " required>
+    <label for="loginPassword">Password</label>
+  </div>
+    </div>
+  <button type="submit" id="login">Login</button>
   
+  <p style="text-align: center; flex: 1">Don't have account? 
+  <span class="flipBtn" style="color: navy; font-size: 15px;">SignUp</span>
+  </p>
   
-    <div class="details-container">
-    <div class="detail-nav">
-    <h5>Available Balance</h5>
-    <img class="toggle-balance" src="icon/balance-open.png">
-</div>
-        
-  <div class="balance">&#8358 00.00</div>
-<a href="add-money.html">
-  <button class="top-up">+Add Money</button>
-</a>
-<h5 class="transaction">Transaction History</h5>
-
-<img src="icon/diamond-one.png" class="rank">
-</div>
-  
-
-
-<div class="nav-container">
-  <div class="navBox">
-  <div class="navBtn">
-  <div class="navIcon" style="background-image: url('icon/payrr.png');"></div>
-  </div>
-  <span>To payrr</span>
-  </div>
-  
-  <div class="navBox">
-  <div class="navBtn">
-  <div class="navIcon" style="background-image: url('icon/bank.png');"></div>
-  </div>
-  <span>To bank</span>
-  </div>
-
-  
-  <div class="navBox">
-  <div class="navBtn">
-  <div class="navIcon" style="background-image: url('icon/withdrawal.png');"></div>
-  </div>
-  <span>Withdraw</span>
-  </div>
-</div>
-  
-<div class="nav-container">
-    <div class="navBox">
-  <div class="navBtn">
-   <div class="navIcon" style="background-image: url('icon/crypto.png');"></div>
-  </div>
-  <span>Crypto</span>
-  </div>
-  
-    <div class="navBox">
-  <div class="navBtn">
-  <div class="navIcon" style="background-image: url('icon/coin.png');"></div>
-  </div>
-  <span>Coin</span>
-  </div>
-  
-    <div class="navBox">
-  <div class="navBtn">
-   <div class="navIcon" style="background-image: url('icon/daily check-in.png');"></div>
-  </div>
-  <span>Check-in</span>
-  </div>
-</div>
-
-  <div class="internet-container">
-    
-  <a href="airtime-recharge.html" style="text-decoration: none; color: black">
-   <div class="navBox">
-  <div class="navBtn">
-   <div class="navIcon" style="background-image: url('icon/airtime.png');"></div>
-  </div>
-  <span>Airtime</span>
-  </div> </a>
-  
-   <a href="data-recharge.html" style="text-decoration: none; color: black">
-  <div class="navBox">
-  <div class="navBtn">
-   <div class="navIcon" style="background-image: url('icon/data.png');"></div>
-  </div>
-  <span>Data</span>
-  </div></a>
-  
-    
-    <div class="navBox">
-  <div class="navBtn">
-   <div class="navIcon" style="background-image: url('icon/electricity.png');"></div>
-  </div>
-  <span>Electricity</span>
-  </div>
-  
-    
-    <div class="navBox">
-  <div class="navBtn">
-   <div class="navIcon" style="background-image: url('icon/savings.png');"></div>
-  </div>
-  <span>Savings</span>
-  </div>
-  
-  <div class="navBox">
-  <div class="navBtn">
-   <div class="navIcon" style="background-image: url('icon/investment.png');"></div>
-  </div>
-  <span>Investment</span>
-  </div>
-  
-    <div class="navBox">
-  <div class="navBtn">
-   <div class="navIcon" style="background-image: url('icon/contribution.png');"></div>
-  </div>
-  <span>Contribution</span>
-  </div>
-  
-  
-      <div class="navBox">
-  <div class="navBtn">
-   <div class="navIcon" style="background-image: url('icon/refer.png');"></div>
-  </div>
-  <span>Refer and earn</span>
-  </div>
-  
-
-  <div class="navBox">
-  <div class="navBtn" onclick="window.location.href = 'virtual-card.html' ">
-   <div class="navIcon" style="background-image: url('icon/virtual-card.png');"></div>
-  </div>
-  <span>Virtual card</span>
-  </div>
-  
-  </div>
-  
-  
-  <footer>
-  <div class="footer-nav">
-<img src="icon/home-active.png" style="width: 25px; height: 25px;">
-    <span id="home-text" style="color: navy; font-weight: bold;">Home</span>
-  </div>
-  
-    <div class="footer-nav">
-<img src="icon/message.png" style="width: 25px; height: 25px;">
-    <span>Message</span>
-  </div>
-  
-    <div class="footer-nav">
-<img src="icon/badge.png" style="width: 25px; height: 25px;">
-    <span>Badge</span>
-  </div>
-  
-    <div class="footer-nav">
-<img src="icon/profile.png" style="width: 25px; height: 25px;">
-    <span>Profile</span>
-  </div>
-  </footer>
-  </div>
-  </div>
-  <!--End here-->
-  
-  
-  <!--Transfer History-->
-<div class="history">
-  
-      <!--Screen Wrappper-->
-  <div class="screen-wrapper">
-  <div class="history-header">
-  <img onclick="goBack()" src="icon/backarrow.png" style="width: 20px; height: 20px;">
-  <h3 style="margin: 0;">Transfer History</h3>
-</div>
-
-<div id="content" class="history-content"></div>
-  </div>
+<div class="error-alert" id="login-email"></div>
 </div>
 
 
-</div><!--App closing tag-->
+  <div id="signUp-body">
+    
+    <h3 class="logo">Payrr</h3>
+    
+ <div style="width: 100%; display: flex; align-items: center; flex-direction: column; gap: 30px;">
+   <div class="input-wrapper">
+    <input type="text" id="fulName" placeholder=" " maxlength="20" required>
+   <label for="fulName">FullName</label>
+    </div>
+    
+    <div class="input-wrapper">
+    <input type="email" id="signUp-email" placeholder=" " required>
+   <label for="signUp-email">Email</label>
+    </div>
+    
+   <div class="input-wrapper">
+    <input type="password" id="create-password" placeholder=" " required>
+    <label for="create-assword">Password</label>
+  </div>
+    </div>
+    
+  <button id="signUp">Create Account</button>
+  
+  <p style="text-align: center">Do you have account? 
+  <span class="flipBtn" style="color: navy; font-size: 15px;">Login</span>
+  </p>
+  
+  <div class="error-alert"></div>
+</div>
 
-<script src="Bank info.js" defer></script>
+</div>
+</div>
+    
+    <script>
+     const card = document.getElementById("cards");
+     const flipBtn = document.querySelectorAll('.flipBtn');
+     
+     flipBtn.forEach((btn) =>{
+     btn.addEventListener('click', ()=>{
+     card.classList.toggle("flip");
+     });
+   });
+   
+  
+   const loginEmail = document.getElementById('loginEmail');
+   const loginPassword = document.getElementById('loginPassword');
+   const loginBtn = document.getElementById('login');
+   const errors = document.querySelectorAll('.error-alert');
+   
+   loginBtn.addEventListener('click', (e) =>{
+   if(loginEmail.value.trim() === ''){
+     e.preventDefault();
+     errors.forEach((error) =>{
+     error.textContent = "Invalid Email";
+     error.style.transform = "rotate(360deg)";
+  });
+     return;
+   }
+   
+   if(loginPassword.value.trim() === ''){
+     errors.forEach((error) =>{
+     error.textContent = "Invalid password";
+     error.style.transform = "rotate(360deg)";
+     });
+     return;
+   }
+   });
+   
+   loginEmail.addEventListener('input', () => {
+   errors.forEach((error) =>{
+   error.textContent = '';
+   });
+});
 
-
+setTimeout(function(){
+  errors.forEach((error) =>{
+     error.style.opacity = "0";
+     error.style.transition = "4s ease";
+     error.style.transform = "rotate(360deg)";
+    });
+   }, 2000);
+   
+  const fulname = document.getElementById('fulName');
+  const email = document.getElementById('signUp-email');
+  const password = document.getElementById('create-password');
+  const signUp = document.getElementById('signUp');
+  
+  signUp.addEventListener('click', ()=>{
+    if(fulname.value.trim() === ''){
+      errors.forEach((error) =>{
+     error.textContent = "Input fulname";
+     error.style.transform = "rotate(360deg)";
+     });
+      return;
+    }
+  });
+  
+    </script>
   </body>
 </html>
