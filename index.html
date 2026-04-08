@@ -113,12 +113,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    transform: rotate(180deg);
-    transition: transform 0.4s;
+    transform: scale(0);
+    transition: transform 0.3s ease, opacity 0.3s ease;
     padding: 5px;
     color:red ;
-    
-   }   
+   } 
+.error-alert.show {
+  transform: scale(1.1);
+  opacity: 1;
+}
     </style>
   </head>
   <body>
@@ -146,8 +149,6 @@
   <p style="text-align: center; flex: 1">Don't have account? 
   <span class="flipBtn" style="color: navy; font-size: 15px;">SignUp</span>
   </p>
-  
-<div class="error-alert" id="login-email"></div>
 </div>
 
 
@@ -168,7 +169,7 @@
     
    <div class="input-wrapper">
     <input type="password" id="create-password" placeholder=" " required>
-    <label for="create-assword">Password</label>
+    <label for="create-password">Password</label>
   </div>
     </div>
     
@@ -185,6 +186,99 @@
 </div>
     
     <script>
+  const fulName = document.getElementById('fulName');
+  const signEmail = document.getElementById('signUp-email');
+  const signPassword = document.getElementById('create-password');
+  const signUpBtn = document.getElementById('signUp');
+  const error = document.querySelector('.error-alert');
+ 
+  signUpBtn.addEventListener('click', ()=>{
+    const userData = {
+      name: fulName.value.trim(),
+      email: signEmail.value.trim().toLowerCase(),
+      password: signPassword.value.trim()
+    };
+    if(!userData.name){
+     error.textContent = "please input your fullName";
+     error.classList.add('show');
+     setTimeout(()=>{
+    error.classList.remove('show');
+  }, 2000);
+     return;
+  
+  
+    };
+    
+    if(userData.name.length > 20){
+    error.classList.add('show');
+    error.textContent = "Max 20 characters";
+    setTimeout(()=>{
+    error.classList.remove('show');
+  }, 2000);
+    return;
+}
+
+    if(!userData.email){
+      error.classList.add('show');
+     error.textContent = "please input your email";
+    setTimeout(()=>{
+    error.classList.remove('show');
+  }, 2000);
+      return;
+    };
+    
+    if(!userData.password){
+      error.classList.add('show');   
+      error.textContent = "please input your password";
+     setTimeout(()=>{
+    error.classList.remove('show');
+  }, 2000);
+      return;
+    };
+     
+    
+   
+    //Getting existing users
+    let users = JSON.parse(localStorage.getItem('users')) || [];
+    
+    //Prevent duplicate emails
+    const exists = users.some(user => user.email === userData.email);
+    if(exists){
+      alert('Email already registered.');
+      return;
+    }
+    //Add new user
+    users.push(userData);
+    
+    //Save back to localStorage
+    localStorage.setItem('users', JSON.stringify(users));
+    
+    alert("Success");
+    
+    localStorage.setItem('currentUser', JSON.stringify(userData));
+ 
+    fulName.value = "";
+    signEmail.value = "";
+    signPassword.value = "";
+    error.textContent = "";
+  });
+  
+  
+  
+  fulName.addEventListener('input', ()=>{
+    error.textContent = "";
+    return;
+  });
+  signEmail.addEventListener('input', ()=>{
+    error.textContent = "";
+    return;
+  });
+  signPassword.addEventListener('input', ()=>{
+    error.textContent = "";
+    return;
+  });
+
+  
      const card = document.getElementById("cards");
      const flipBtn = document.querySelectorAll('.flipBtn');
      
@@ -193,60 +287,9 @@
      card.classList.toggle("flip");
      });
    });
-   
-  
-   const loginEmail = document.getElementById('loginEmail');
-   const loginPassword = document.getElementById('loginPassword');
-   const loginBtn = document.getElementById('login');
-   const errors = document.querySelectorAll('.error-alert');
-   
-   loginBtn.addEventListener('click', (e) =>{
-   if(loginEmail.value.trim() === ''){
-     e.preventDefault();
-     errors.forEach((error) =>{
-     error.textContent = "Invalid Email";
-     error.style.transform = "rotate(360deg)";
-  });
-     return;
-   }
-   
-   if(loginPassword.value.trim() === ''){
-     errors.forEach((error) =>{
-     error.textContent = "Invalid password";
-     error.style.transform = "rotate(360deg)";
-     });
-     return;
-   }
-   });
-   
-   loginEmail.addEventListener('input', () => {
-   errors.forEach((error) =>{
-   error.textContent = '';
-   });
-});
 
-setTimeout(function(){
-  errors.forEach((error) =>{
-     error.style.opacity = "0";
-     error.style.transition = "4s ease";
-     error.style.transform = "rotate(360deg)";
-    });
-   }, 2000);
-   
-  const fulname = document.getElementById('fulName');
-  const email = document.getElementById('signUp-email');
-  const password = document.getElementById('create-password');
-  const signUp = document.getElementById('signUp');
+
   
-  signUp.addEventListener('click', ()=>{
-    if(fulname.value.trim() === ''){
-      errors.forEach((error) =>{
-     error.textContent = "Input fulname";
-     error.style.transform = "rotate(360deg)";
-     });
-      return;
-    }
-  });
   
     </script>
   </body>
