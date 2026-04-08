@@ -81,10 +81,9 @@
   padding: 0 4px;
 }
 /* when input is focused OR has value */
-.input-wrapper input:focus + label,
-.input-wrapper input:valid + label {
+input:focus + label,
+input:not(:placeholder-shown) + label {
   top: -12px;
-  left: 0px;
   font-size: 16px;
   color: navy;
   background: whitesmoke;
@@ -96,6 +95,7 @@
     margin-bottom: 5px;
     padding-left: 10x;
     color: white;
+    transition: 0.2 ease all;
   }
   button{
     padding:  5px 40px;
@@ -237,7 +237,7 @@
     };
      
     
-   
+
     //Getting existing users
     let users = JSON.parse(localStorage.getItem('users')) || [];
     
@@ -263,21 +263,6 @@
     error.textContent = "";
   });
   
-  
-  
-  fulName.addEventListener('input', ()=>{
-    error.textContent = "";
-    return;
-  });
-  signEmail.addEventListener('input', ()=>{
-    error.textContent = "";
-    return;
-  });
-  signPassword.addEventListener('input', ()=>{
-    error.textContent = "";
-    return;
-  });
-
   
      const card = document.getElementById("cards");
      const flipBtn = document.querySelectorAll('.flipBtn');
