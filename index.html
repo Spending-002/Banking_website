@@ -61,7 +61,7 @@
     height: 30px;
     outline: none;
     padding: 3px 10px;
-    font-size: 20px;
+    font-size: 18px;
     font-family: Arial,Sans-Serif;
     background: navy;
     color: white;
@@ -82,19 +82,18 @@
 }
 /* when input is focused OR has value */
 .input-wrapper input:focus + label,
-.input-wrapper input:valid + label {
-  top: -12px;
-  left: 0px;
-  font-size: 16px;
-  color: navy;
-  background: whitesmoke;
+.input-wrapper input:not(:placeholder-shown) + label {
+  top: -10px;
+  left: -6px;
+  font-size: 17px;
   font-weight: bold;
+  color: black;
+  background: whitesmoke;
 }
   label{
     font-size: 16px;
     margin-right: auto;
     margin-bottom: 5px;
-    padding-left: 10x;
     color: white;
   }
   button{
@@ -151,6 +150,32 @@
   margin: 0;
   font-family: Arial, Sans-Serif;
 }
+.successfulBox{
+  position: fixed;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.2s;
+}
+.successfulBox img{
+width: 100%;
+height: 100%;
+object-fit: cover;
+border-radius: 100px;
+}
+.successBox-background{
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100dvh;
+  background: rgb(0,0,0,0.1);
+}
     </style>
   </head>
   <body>
@@ -187,8 +212,8 @@
     
  <div style="width: 100%; display: flex; align-items: center; flex-direction: column; gap: 30px;">
    <div class="input-wrapper">
-    <input type="text" id="fulName" placeholder=" " maxlength="20" required>
-   <label for="fulName">FullName</label>
+    <input type="text" id="fulName" placeholder=" " maxlength="30" required>
+   <label for="fulName">Username</label>
     </div>
     
     <div class="input-wrapper">
@@ -214,26 +239,33 @@
   <p style="text-align: center">Do you have account? 
   <span class="flipBtn" style="color: navy; font-size: 15px;">Login</span>
   </p>
-  
-  <div class="error-alert"></div>
+   <div class="error-alert"></div>
+   </div>
+</div><!--card closing tags-->
+
+<div class="successBox-background"></div>
+<div class="successfulBox">
+  <img src="icon/success.gif">
 </div>
 
-</div>
-</div>
-    
+</div><!--App closing tag-->
+  
     <script>
   const fulName = document.getElementById('fulName');
   const signEmail = document.getElementById('signUp-email');
   const signPassword = document.getElementById('create-password');
   const signUpBtn = document.getElementById('signUp');
   const error = document.querySelector('.error-alert');
- 
+  const successBox = document.querySelectorAll('.successfulBox');
+  const backgroundCover = document.querySelector('.successBox-background');
+  
   signUpBtn.addEventListener('click', ()=>{
     const userData = {
       name: fulName.value.trim(),
       email: signEmail.value.trim().toLowerCase(),
       password: signPassword.value.trim()
     };
+    
     if(!userData.name){
      error.textContent = "please input your fullName";
      error.classList.add('show');
@@ -241,19 +273,7 @@
     error.classList.remove('show');
   }, 2000);
      return;
-  
-  
-    };
-    
-    if(userData.name.length > 20){
-    error.classList.add('show');
-    error.textContent = "Max 20 characters";
-    setTimeout(()=>{
-    error.classList.remove('show');
-  }, 2000);
-    return;
-}
-
+};
     if(!userData.email){
       error.classList.add('show');
      error.textContent = "please input your email";
@@ -262,7 +282,6 @@
   }, 2000);
       return;
     };
-    
     if(!userData.password){
       error.classList.add('show');   
       error.textContent = "please input your password";
@@ -271,32 +290,35 @@
   }, 2000);
       return;
     };
+   
+    if(userData){
+      signUpBtn.textContent = "Creating...";
+      signUpBtn.style.fontSize = "16px";
+     
+      setTimeout(()=>{ 
+       signUpBtn.textContent = "Loading..."; 
+      },2000);
+     
+      
+      setTimeout(()=>{
+      signUpBtn.textContent = "Successful"; 
+      backgroundCover.style.display = "block";
+      successBox.forEach((success) =>{
+       success.style.opacity = "1";
+     });
+     window.location.href = "home.html";
+   }, 3000);
+   
+  };
     
-    //Getting existing users
-    let users = JSON.parse(localStorage.getItem('users')) || [];
     
-    //Prevent duplicate emails
-    const exists = users.some(user => user.email === userData.email);
-    if(exists){
-      alert('Email already registered.');
-      return;
-    }
-    //Add new user
-    users.push(userData);
-    
-    //Save back to localStorage
-    localStorage.setItem('users', JSON.stringify(users));
-    
-    alert("Success");
-    
-    localStorage.setItem('currentUser', JSON.stringify(userData));
- 
+});   
+
     fulName.value = "";
     signEmail.value = "";
     signPassword.value = "";
     error.textContent = "";
-  });
-  
+    
 
   fulName.addEventListener('input', ()=>{
     error.textContent = "";
@@ -339,6 +361,8 @@ passwordInput.addEventListener('input', () => {
  }
 });
  
+let currentPasswordScore = 0;
+
 function checkStrength(password) {
   let score = 0;
 
@@ -346,6 +370,8 @@ function checkStrength(password) {
   if (/[A-Z]/.test(password)) score++;
   if (/[0-9]/.test(password)) score++;
   if (/[^A-Za-z0-9]/.test(password)) score++;
+
+  currentPasswordScore = score;
 
   // Empty input
   if (password.length === 0) {
@@ -379,6 +405,7 @@ function checkStrength(password) {
     strengthText.textContent = "Strong";
   }
 }
+  
   
     </script>
   </body>
